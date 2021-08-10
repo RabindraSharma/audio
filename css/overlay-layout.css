@@ -1,0 +1,108 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    -webkit-tap-highlight-color:transparent;
+    font-family:cursive;
+    font-style: oblique;
+}
+
+.headTop{
+    min-height:5vh;
+    padding: 4px;
+    user-select: none;
+    -webkit-tap-highlight-color:transparent;
+    font-family:cursive;
+    font-style: oblique;
+}
+.pull-left{
+    width: 20px;
+    height: 20px;
+    
+    /*background-color:#dede;*/
+    border: dotted #dede;
+    border-radius: 4px;
+}
+.pull-right{
+    background-color:rgba(68, 68, 68, 0.199);
+    border-radius: 2px;
+    padding: 2px;
+    
+}
+.active{
+    border-radius: 2px;
+    padding: 2px;
+}
+.mainContent{
+    min-height: 50vh;
+    width: 536px;
+    background-color: #ffffff;
+}
+.activeLayout{
+  
+        width: 100%;
+        box-shadow: 0px 0px 1px 0px rgb(230, 227, 227);
+        color: white;
+        height:33vh auto;
+        overflow: hidden;
+        overflow:auto;
+        position: relative;
+
+}
+.roundDisplay{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1rem;
+}
+.clear{
+    border-radius:90px;
+    color: red;
+    cursor: pointer;
+    background-color: #fff;
+    position: absolute;
+    size: 40px;
+    right:40px;
+    z-index: 50;
+
+}
+.apply{
+    border-radius:90px;
+    color: #dede;
+    cursor: pointer;
+    background-color: #fff;
+    position: absolute;
+    right:2px;
+    z-index: 50;
+
+}
+.apply:hover{
+    background-color: rgba(159, 161, 161, 0.116);
+    color: #fff;
+}
+.clear:hover{
+    background-color: rgba(159, 161, 161, 0.116);
+    color: rgb(196, 17, 17);
+}
+.right-text{
+    position: absolute;
+    left:50%;
+    top:50%;
+    z-index: 1;
+}
+
+
+.flexbox{
+    color: black;
+    width: 100%;
+    box-shadow: 0px 0px 1px 0px rgba(20, 20, 20, 0.158);
+    border-radius: 6px;
+    background-color: rgba(18, 19, 18, 0.212);
+    margin: 4px;
+    padding: 2px;
+}
+.newBox{
+    width: 100%;
+    height: 90vh;
+}
+
+

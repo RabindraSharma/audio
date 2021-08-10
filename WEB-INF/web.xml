@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>audio</display-name>
+
+	<welcome-file-list>
+		<welcome-file>audio.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>audio</servlet-name>
+		<servlet-class>com.abps.application.audio.server.handler.AudioHttpHandler</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>overlay</servlet-name>
+		<servlet-class>com.abps.application.audio.server.handler.OverlayHttpHandler</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>audioevent</servlet-name>
+		<servlet-class>com.abps.application.audio.server.websocket.AudioEventServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>audioevent</servlet-name>
+		<url-pattern>/audioevent/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>audio</servlet-name>
+		<url-pattern>/audio/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>overlay</servlet-name>
+		<url-pattern>/overlay/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>

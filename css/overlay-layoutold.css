@@ -1,0 +1,74 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.headTop{
+    min-height:5vh;
+    padding: 4px;
+}
+.pull-left{
+    width: 20px;
+    height: 20px;
+    
+    /*background-color:#dede;*/
+    border: dotted #dede;
+    border-radius: 4px;
+}
+.pull-right{
+    background-color:rgba(68, 68, 68, 0.199);
+    border-radius: 2px;
+    padding: 2px;
+    
+}
+.active{
+    border-radius: 2px;
+    padding: 2px;
+}
+.mainContent{
+    min-height: 50vh;
+    width: 536px;
+    background-color: #ffffff;
+}
+.activeLayout{
+  
+        width: 100%;
+        box-shadow: 0px 0px 1px 0px rgb(230, 227, 227);
+        color: white;
+        height:33vh auto;
+        overflow: hidden;
+        overflow:auto;
+        position: relative;
+
+}
+.roundDisplay{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1rem;
+}
+.fa-arrow-right{
+    border-radius:90px;
+    color: rgba(68, 68, 68, 0.199);
+    cursor: pointer;
+    background-color: rgba(#dede,#dee,#dede,#dede);
+    position: absolute;
+    right:2px;
+    z-index: 50;
+
+}
+.fa-arrow-right:hover{
+    background-color: rgba(159, 161, 161, 0.116);
+    color: #fff;
+}
+.right-text{
+    position: absolute;
+    right:40px;
+}
+
+.flexbox{
+    color: black;
+    width: 100%;
+    box-shadow: 0px 0px 1px 0px rgb(230, 227, 227);
+}
+
+

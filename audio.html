@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!-- build:css(.) styles/vendor.css -->
+<!-- bower:css -->
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/rzslider.css">
+      
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="css/audio/audio.css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/rzslider.js"></script>
+	<script src='js/jquery-3.3.1.min.js'></script>
+	<script src="js/ui-bootstrap-tpls.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/angular-route.js"></script>
+
+<!-- endbuild -->
+</head>
+
+
+<body id="bodycontainer"  ng-app="webappApp" ng-controller="Layoutv2Controller" ng-init="loadAudios()">
+
+	<header>
+		<h3><p>Audio Manager</p></h3>
+		<div class="main">
+		
+		<div ng-repeat="obj1 in displays">
+			<div ng-repeat="obj2 in obj1">
+				<div style="float: right; width: 350px;" title="Master volume">
+                  <div style="text-align: center">Master Volume : {{obj2.mastervolumeinpercentage}}%</div>
+                  <rzslider rz-slider-model="obj2.mastervolumeinpercentage" 
+								rz-slider-options="{id:master, floor:0, ceil:100, disabled: obj2.ismastermute, onChange: masterVolumeChange}" ></rzslider>
+                </div>
+			</div>
+		</div>
+		</div>
+	</header>
+	
+	<div container class="container" id="container">
+		<div ng-repeat="obj1 in displays">
+			<div ng-repeat="obj2 in obj1">
+			<table class="tableHeader">
+			<tr>
+              <th style= "font-weight: bold; font-size: 80%; color: gray;">Name</th>
+              <th style= "font-weight: bold; font-size: 80%; color: gray;"><img class="imageButton" ng-src="{{obj2.ismastermute ? 'images/volume-off_red.png' : 'images/volume-up.png'}}" ng-click="setMasterMute(obj2)"/></th>
+              <th style= "font-weight: bold; font-size: 80%; color: gray;">Active</th>
+              <th style= "font-weight: bold; font-size: 80%; color: gray;">Volume</th>
+            </tr>
+            </table>
+            <table class="tableBody">
+        	<tbody>
+        		<tr></tr>
+        		<tr></tr>
+        		<tr></tr>
+        		<tr></tr>
+        		<tr></tr>
+        		<tr></tr>
+				<tr ng-repeat="obj3 in obj2.displayAudioSources" ng-if="obj3.isActive">
+							<td width="10%">{{obj3.source}}
+							</td>
+							<td width="20%">  
+								<img class="imageButton pointer"  ng-value="{{obj3.volumeStreamState.volumeDeathHandler.muteCount>=1 ? obj3.isMute=true : obj3.isMute=false}}" ng-src="{{obj3.isMute || obj2.ismastermute ? 'images/volume-off_red.png' : 'images/volume-up.png'}}" ng-click="setMute(obj3)">
+							</td>
+							<td width="20%">
+              					<img class="imageButton" ng-src="{{obj3.isMute || obj2.ismastermute ? 'images/Decoding_nok.png' : 'images/Decoding.gif'}}">
+            				</td>
+							<td width="36%">
+								<rzslider rz-slider-model="obj3.volume" 
+								rz-slider-options="{id:obj3.source, floor:0, ceil:100, disabled: obj3.isMute || obj2.ismastermute, onChange: slideChange}" ></rzslider>
+							</td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- build:js(.) scripts/vendor.js -->
+	<!-- bower:js -->
+	
+	
+	<script src="controllers/AudioApp.js"></script>
+	<script src="controllers/Audio.js"></script>
+	<script src="controllers/AudioService.js"></script>
+	<script src="controllers/AudioController.js"></script>
+	
+	<!-- endbuild -->
+</body>
+</html>	
